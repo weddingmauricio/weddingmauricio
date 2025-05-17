@@ -36,7 +36,7 @@ class SecurityConfiguration {
                                 .requestMatchers(HttpMethod.POST, "/wp-mconto/pagos/crear")
                                 .permitAll()
                                 .anyRequest().authenticated())
-                .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
+                //.addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 }
