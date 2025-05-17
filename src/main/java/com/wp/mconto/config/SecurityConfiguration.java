@@ -33,7 +33,7 @@ class SecurityConfiguration {
                 .authorizeHttpRequests(auth ->
                         auth.requestMatchers(HttpMethod.POST, "/wp-mconto/auth/login")
                                 .permitAll()
-                                .requestMatchers(HttpMethod.POST, "/wp-mconto/auth/auth/")
+                                .requestMatchers(HttpMethod.POST, "/wp-mconto/auth/")
                                 .permitAll()
                                 .requestMatchers(HttpMethod.POST, "/wp-mconto/auth/token/*")
                                 .permitAll()
