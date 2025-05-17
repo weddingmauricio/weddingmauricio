@@ -26,7 +26,7 @@ import java.util.Objects;
 @RestController
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST})
 @RequestMapping("/wp-mconto/auth")
-public class AuthCtr {
+public class AuthCtr{
 
     @Autowired
     UsuarioService usuarioService;
