@@ -14,13 +14,7 @@ public class CorsConfig {
     @Bean
     CorsConfigurationSource corsConfigurationSource(){
         CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.setAllowedOrigins(Arrays.asList(
-                "http://167.88.45.113:3000",
-                "https://167.88.45.113:3000",
-                "http://localhost:3000",
-                "https://localhost:3000",
-                "http://cartera360.test:3000",
-                "https://cartera360.test:3000"));
+        corsConfiguration.setAllowedOrigins(Arrays.asList("*"));
         corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         corsConfiguration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
         corsConfiguration.setAllowCredentials(true);
