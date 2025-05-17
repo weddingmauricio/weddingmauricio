@@ -28,7 +28,7 @@ class SecurityConfiguration {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http.cors().and()
+        return http
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth ->
@@ -37,7 +37,7 @@ class SecurityConfiguration {
                                 .requestMatchers(HttpMethod.POST, "/wp-mconto/pagos/crear")
                                 .permitAll()
                                 .anyRequest().authenticated())
-                //.addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 }
