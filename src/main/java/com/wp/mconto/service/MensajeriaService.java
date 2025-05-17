@@ -7,6 +7,7 @@ import com.sendgrid.SendGrid;
 import com.sendgrid.helpers.mail.Mail;
 import com.sendgrid.helpers.mail.objects.Content;
 import com.sendgrid.helpers.mail.objects.Email;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -15,10 +16,10 @@ import java.io.IOException;
 @Service
 public class MensajeriaService implements IMensajeriaService {
 
+    @Value("${apiKeyMensajeria}")
+    private String apikeyMensajeria;
 
     //TODO CAMBIAR APIKEY
-
-private final String apiKey = "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";
 
     public void enviarCorreo(String para, String token) throws IOException {
         Email from = new Email("mconto@gmail.com");
@@ -26,7 +27,7 @@ private final String apiKey = "SG.gruyGdp-TX2DwUmmvgYNPQ.Ukb0fFaxOOgRAN73Uw9n-nr
         Content content = new Content("text/plain", token);
         Mail mail = new Mail(from, "recupera tu clave", to, content);
 
-        SendGrid sg = new SendGrid(apiKey);
+        SendGrid sg = new SendGrid(apikeyMensajeria);
         Request request = new Request();
 
         try {
