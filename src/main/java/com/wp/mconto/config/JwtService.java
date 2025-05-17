@@ -16,8 +16,7 @@ import java.util.List;
 @Service
 public class JwtService {
 
-    @Value("${jwt.secret}")
-    private String jwtSecret;
+    private String jwtSecret = "WtCqL+O3rYdR9q8JtVXFxmwCe+mgh3ek14EwEPnbDCylKFWwSxtXU1roN9crZpTrhghukUhsXcOBuTOGLINjJQ==";
 
     public SecretKey getSigningKey() {
         byte[] decodedKey = Base64.getDecoder().decode(jwtSecret);
